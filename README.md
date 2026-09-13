@@ -18,6 +18,10 @@ python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 streamlit run app.py
 ```
+On Windows, use `.venv\Scripts\activate` in place of the `source` command.
+
+Built and tested on Python 3.14. Earlier versions will likely work, but the pinned
+dependency versions in `requirements.txt` were resolved against 3.14.
 
 No database required. The dashboard reads the CSVs in `data_processed/` by default.
 
