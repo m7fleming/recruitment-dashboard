@@ -10,22 +10,27 @@ combining Sofascore per-90 performance data with Transfermarkt valuations. The
 dashboard shows the 2025/26 season only; earlier seasons trained the models.
 
 ## Quickstart
-git clone <repo-url>
+
+```
+git clone https://github.com/m7fleming/recruitment-dashboard.git
 cd recruitment-dashboard
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 streamlit run app.py
+```
 
 No database required. The dashboard reads the CSVs in `data_processed/` by default.
 
 ## Optional: Postgres backend
 
-The project was originally built against PostgreSQL, and that path still works: 
+The project was originally built against PostgreSQL, and that path still works:
 
+```
 createdb football_recruitment
-cp .env.example .env # set DATABASE_URL
+cp .env.example .env          # set DATABASE_URL
 python3 scripts/load_to_postgres.py
 DATA_SOURCE=postgres streamlit run app.py
+```
 
 Both backends return an identical dataframe.
 
